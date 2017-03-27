@@ -9,7 +9,7 @@ import entidades.Pessoa;
 public class ControladorAmigo extends Amigo {
 
 	public ControladorAmigo(Pessoa nome, int telefone, String email) {
-		super(nome, telefone, email);
+
 		// TODO Auto-generated constructor stub
 	}
 
@@ -24,22 +24,22 @@ public class ControladorAmigo extends Amigo {
 	}
 
 	public ArrayList<Amigo> listarAmigo() {
-		return amigos;
+		return this.amigos;
 	}
 
 	public void incluiAmigo(Amigo amigo) {
-		
-		
+
+
 	}
 
 	public void listaAmigos() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void alteraAmigoPeloCodigo(String nomeParaAlterar, int telefoneParaAlterar, String emailParaAlterar) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public boolean excluiAmigoPeloCodigo(String nomeParaExcluir) {

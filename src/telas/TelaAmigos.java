@@ -20,20 +20,20 @@ public class TelaAmigos {
 	 *
 	 * @author 08801473931
 	 */
-	    
+
 	    private static Scanner teclado;
 	    private ControladorAmigo owner;
-	    
+
 	    public void TelaAmigo(ControladorAmigo owner) {
 	        this.teclado = new Scanner(System.in);
 	        this.owner = owner;
 	    }
 	    static int opcao = 0;
 	    public static void exibeTelaAmigos() {
-	        
+
 	        do {
-	        
-	        
+
+
 	        System.out.println("-------------- SisAmigo -------------");
 	        System.out.println("1 - Cadastra Amigo");
 	        System.out.println("2 - Exclui Amigo");
@@ -42,93 +42,93 @@ public class TelaAmigos {
 	        System.out.println("5 - Retorna");
 	        System.out.println("Escolha a opcao: ");
 	        opcao = teclado.nextInt();
-	        
-	        
+
+
 	        switch(opcao) {
-	            
+
 	            case 1:
 	                cadastraAmigo();
 	                break;
-	                
+
 	            case 4:
 	                listaAmigos();
 	                break;
 	            case 3:
-	                 alteraAmigo();              
+	                 alteraAmigo();
 	                break;
 	            case 2:
 	                excluiAmigo();
 	                break;
-	   
+
 	        }
-	        
-	        
-	        } while (opcao != 0);      
-	        
-	        
+
+
+	        } while (opcao != 0);
+
+
 	    }
 
-	    private void cadastraAmigo() {
-	    	
-	    		String nome = pedeNomeAmigo();
-	            
-	            int telefone = pedeTelefoneAmigo();
-	            
-	            String email = pedeEmailAmigo();
-	            
+	    private static void cadastraAmigo() {
+
+	    		String nome = this.pedeNomeAmigo();
+
+	            int telefone = this.pedeTelefoneAmigo();
+
+	            String email = this.pedeEmailAmigo();
+
 	            Amigo amigo = new Amigo(nome, telefone, email);
-	            
-	            owner.incluiAmigo(amigo);
-	            
+
+	            this.owner.incluiAmigo(amigo);
+
 	    }
 
 	   public void exibeListaAmigos(ArrayList<Amigo> listaAmigos) {
-	        
+
 	       for (Amigo amigo : listaAmigos) {
-	           System.out.println("Amigo: "+ amigo.getNome());
+	           System.out.println("cadastraAmigoAmigo: "+ amigo.getNome());
 	           System.out.println("codigo Amigo: "+ amigo.getTelefone());
 	           System.out.println("codigo Amigo: "+ amigo.getEmail());
 	       }
 	    }
 
-	    private void listaAmigos() {
-	        owner.listaAmigos();
+	    private static void listaAmigos() {
+	        this.owner.listaAmigos();
 	    }
 
-	    private void excluiAmigo() {      
-	       String nomeParaExcluir = pedeNomeAmigo(); 
-	       
-	      if (owner.excluiAmigoPeloCodigo(nomeParaExcluir)) {
+	    private static void excluiAmigo() {
+	       String nomeParaExcluir = this.pedeNomeAmigo();
+
+	      if (this.owner.excluiAmigoPeloCodigo(nomeParaExcluir)) {
 	          System.out.println("Amigo excluido com sucesso!!");
 	      } else {
 	          System.out.println("Não foi possivel excluir o amigo");
 	      }
 
 	    }
-	    
+
 	    private int pedeTelefoneAmigo() {
-	       System.out.println("Digite o Telefone: ");
-	       int codigo = teclado.nextInt(); 
+	       System.out.princadastraAmigotln("Digite o Telefone: ");
+	       int codigo = teclado.nextInt();
 	       return codigo;
 	    }
-	    
+
 	    private String pedeEmailAmigo() {
 		       System.out.println("Digite o Email: ");
-		       String email = teclado.next(); 
+		       String email = teclado.next();
 		       return email;
 	    }
-	    
 
-	    private void alteraAmigo() {
-    
-	        String nomeParaAlterar = pedeNomeAmigo();
-	        
-	        int telefoneParaAlterar = pedeTelefoneAmigo();
-	        
-	        String emailParaAlterar = pedeEmailAmigo();
-		    	        
-	        owner.alteraAmigoPeloCodigo(nomeParaAlterar, telefoneParaAlterar, emailParaAlterar);
-	        
+
+	    private static void alteraAmigo() {
+
+	        String nomeParaAlterar = this.pedeNomeAmigo();
+
+	        int telefoneParaAlterar = this.pedeTelefoneAmigo();
+
+	        String emailParaAlterar = this.pedeEmailAmigo();
+
+	        this.owner.alteraAmigoPeloCodigo(nomeParaAlterar, telefoneParaAlterar, emailParaAlterar);
+
 	    }
 
 	    private String pedeNomeAmigo() {
@@ -136,8 +136,8 @@ public class TelaAmigos {
 	        String nome = teclado.next();
 	        return nome;
 	    }
-	    
-	    
-	    
+
+
+
 	}
 

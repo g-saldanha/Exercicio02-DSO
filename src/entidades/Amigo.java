@@ -7,15 +7,15 @@ public class Amigo {
 	private int telefone;
 
 	private String email;
-	
-	public Amigo(Pessoa nome, int telefone, String email) {
-		this.nome = nome;
+
+	public Amigo(String nome, int telefone, String email) {
+		this.nome = new Pessoa(nome);
 		this.telefone = telefone;
 		this.email = email;
 	}
-	
+
 	public Pessoa getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	public void setNome(Pessoa nome) {
@@ -23,7 +23,7 @@ public class Amigo {
 	}
 
 	public int getTelefone() {
-		return telefone;
+		return this.telefone;
 	}
 
 	public void setTelefone(int telefone) {
@@ -31,7 +31,7 @@ public class Amigo {
 	}
 
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
