@@ -7,11 +7,5 @@ public class ControladorPrincipal extends TelaPrincipal {
 		exibeTelaPrincipal();
 	}
 
-	
-	public void iniciarSistema() {
-		
-	}
-	
-	
 
 }

@@ -21,7 +21,7 @@ public class TelaAmigos {
 	 * @author 08801473931
 	 */
 
-	    private static Scanner teclado;
+	    private Scanner teclado;
 	    private ControladorAmigo owner;
 
 	    public void TelaAmigo(ControladorAmigo owner) {
@@ -41,23 +41,23 @@ public class TelaAmigos {
 	        System.out.println("4 - Lista Amigos");
 	        System.out.println("5 - Retorna");
 	        System.out.println("Escolha a opcao: ");
-	        opcao = teclado.nextInt();
+	        opcao = this.teclado.nextInt();
 
 
 	        switch(opcao) {
 
 	            case 1:
-	                cadastraAmigo();
+	                this.cadastraAmigo();
 	                break;
 
 	            case 4:
-	                listaAmigos();
+	                this.listaAmigos();
 	                break;
 	            case 3:
-	                 alteraAmigo();
+	                 this.alteraAmigo();
 	                break;
 	            case 2:
-	                excluiAmigo();
+	                this.excluiAmigo();
 	                break;
 
 	        }
@@ -68,7 +68,7 @@ public class TelaAmigos {
 
 	    }
 
-	    private static void cadastraAmigo() {
+	    private void cadastraAmigo() {
 
 	    		String nome = this.pedeNomeAmigo();
 
@@ -78,7 +78,7 @@ public class TelaAmigos {
 
 	            Amigo amigo = new Amigo(nome, telefone, email);
 
-	            this.owner.incluiAmigo(amigo);
+	            this.owner.cadastraAmigo(amigo);
 
 	    }
 
@@ -91,14 +91,14 @@ public class TelaAmigos {
 	       }
 	    }
 
-	    private static void listaAmigos() {
-	        this.owner.listaAmigos();
+	    private  void listaAmigos() {
+	        this.owner.listarAmigos();
 	    }
 
-	    private static void excluiAmigo() {
+	    private  void excluiAmigo() {
 	       String nomeParaExcluir = this.pedeNomeAmigo();
 
-	      if (this.owner.excluiAmigoPeloCodigo(nomeParaExcluir)) {
+	      if (this.owner.removerAmigo(nomeParaExcluir)) {
 	          System.out.println("Amigo excluido com sucesso!!");
 	      } else {
 	          System.out.println("Não foi possivel excluir o amigo");
@@ -107,19 +107,19 @@ public class TelaAmigos {
 	    }
 
 	    private int pedeTelefoneAmigo() {
-	       System.out.princadastraAmigotln("Digite o Telefone: ");
-	       int codigo = teclado.nextInt();
+	       System.out.println("Digite o Telefone: ");
+	       int codigo = this.teclado.nextInt();
 	       return codigo;
 	    }
 
 	    private String pedeEmailAmigo() {
 		       System.out.println("Digite o Email: ");
-		       String email = teclado.next();
+		       String email = this.teclado.next();
 		       return email;
 	    }
 
 
-	    private static void alteraAmigo() {
+	    private void alteraAmigo() {
 
 	        String nomeParaAlterar = this.pedeNomeAmigo();
 
@@ -127,13 +127,13 @@ public class TelaAmigos {
 
 	        String emailParaAlterar = this.pedeEmailAmigo();
 
-	        this.owner.alteraAmigoPeloCodigo(nomeParaAlterar, telefoneParaAlterar, emailParaAlterar);
+	        this.owner.alteraAmigo(nomeParaAlterar, telefoneParaAlterar, emailParaAlterar);
 
 	    }
 
 	    private String pedeNomeAmigo() {
 	        System.out.println("Digite o nome: ");
-	        String nome = teclado.next();
+	        String nome = this.teclado.next();
 	        return nome;
 	    }
 

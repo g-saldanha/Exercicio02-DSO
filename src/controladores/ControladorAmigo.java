@@ -6,7 +6,7 @@ import entidades.Amigo;
 import entidades.Pessoa;
 
 
-public class ControladorAmigo extends Amigo {
+public class ControladorAmigo {
 
 	public ControladorAmigo(Pessoa nome, int telefone, String email) {
 
@@ -23,28 +23,14 @@ public class ControladorAmigo extends Amigo {
 		return false;
 	}
 
-	public ArrayList<Amigo> listarAmigo() {
+	public ArrayList<Amigo> listarAmigos() {
 		return this.amigos;
 	}
 
-	public void incluiAmigo(Amigo amigo) {
+	public void alteraAmigo(String nome, int telefone, String email) {
 
 
 	}
 
-	public void listaAmigos() {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void alteraAmigoPeloCodigo(String nomeParaAlterar, int telefoneParaAlterar, String emailParaAlterar) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public boolean excluiAmigoPeloCodigo(String nomeParaExcluir) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }

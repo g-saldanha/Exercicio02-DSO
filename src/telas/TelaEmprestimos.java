@@ -6,4 +6,17 @@ public class TelaEmprestimos {
 
 	}
 
+	public void pedeEmprestimo() {
+
+	}
+
+	public void pedeDevolucao() {
+
+	}
+
+	public void pedeSituacao() {
+
+	}
+
+
 }
