@@ -5,12 +5,24 @@ import java.util.ArrayList;
 import entidades.Livro;
 
 public class ControladorDeLivros {
-
 	private ArrayList<Livro> livros;
+	private Livro livro = new Livro(null, null, null, null, null, null);
+
+	public ControladorDeLivros(Livro livro) {
+		this.livro = livro;
+	}
+
+
 
 
 	public boolean cadastraLivro(Livro livro) {
-		return false;
+		if (livro != null) {
+			this.livros.add(livro);
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 	public boolean removeLivro(Livro livro) {

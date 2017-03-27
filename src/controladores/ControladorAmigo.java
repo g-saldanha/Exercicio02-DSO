@@ -3,10 +3,18 @@ package controladores;
 import java.util.ArrayList;
 
 import entidades.Amigo;
+import entidades.Pessoa;
 
 
 public class ControladorAmigo {
 	private ArrayList<Amigo> amigos;
+
+	public ControladorAmigo(Pessoa nome, int telefone, String email) {
+
+
+	}
+
+
 
 	public boolean cadastraAmigo(Amigo amigo) {
 		return false;
