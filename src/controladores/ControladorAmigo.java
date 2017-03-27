@@ -3,19 +3,12 @@ package controladores;
 import java.util.ArrayList;
 
 import entidades.Amigo;
-import entidades.Pessoa;
 
 
 public class ControladorAmigo {
-
-	public ControladorAmigo(Pessoa nome, int telefone, String email) {
-
-		// TODO Auto-generated constructor stub
-	}
-
 	private ArrayList<Amigo> amigos;
 
-	public boolean cadastraAmigo(String nome) {
+	public boolean cadastraAmigo(Amigo amigo) {
 		return false;
 	}
 

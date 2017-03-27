@@ -24,12 +24,13 @@ public class TelaAmigos {
 	    private Scanner teclado;
 	    private ControladorAmigo owner;
 
-	    public void TelaAmigo(ControladorAmigo owner) {
+	    public TelaAmigos(ControladorAmigo owner) {
 	        this.teclado = new Scanner(System.in);
 	        this.owner = owner;
 	    }
-	    static int opcao = 0;
-	    public static void exibeTelaAmigos() {
+
+	    int opcao = 0;
+	    public void exibeTelaAmigos() {
 
 	        do {
 
@@ -41,10 +42,10 @@ public class TelaAmigos {
 	        System.out.println("4 - Lista Amigos");
 	        System.out.println("5 - Retorna");
 	        System.out.println("Escolha a opcao: ");
-	        opcao = this.teclado.nextInt();
+	        this.opcao = this.teclado.nextInt();
 
 
-	        switch(opcao) {
+	        switch(this.opcao) {
 
 	            case 1:
 	                this.cadastraAmigo();
@@ -63,7 +64,7 @@ public class TelaAmigos {
 	        }
 
 
-	        } while (opcao != 0);
+	        } while (this.opcao != 0);
 
 
 	    }

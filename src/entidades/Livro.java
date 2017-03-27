@@ -17,7 +17,7 @@ public class Livro {
 	private boolean estaLocado;
 
 	private Pessoa quemLocou;
-	
+
 	public Livro(Pessoa autor, String resumo, String titulo, Pessoa personagemPrincipal, String genero, String faixaEtaria) {
 		this.autor = autor;
 		this.resumo = resumo;
@@ -29,8 +29,22 @@ public class Livro {
 		this.quemLocou = null;
 	}
 
+
+
+	public String getTitulo() {
+		return this.titulo;
+	}
+
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+
+
 	public boolean isEstaLocado() {
-		return estaLocado;
+		return this.estaLocado;
 	}
 
 	public void setEstaLocado(boolean estaLocado) {
@@ -38,7 +52,7 @@ public class Livro {
 	}
 
 	public Pessoa getQuemLocou() {
-		return quemLocou;
+		return this.quemLocou;
 	}
 
 	public void setQuemLocou(Pessoa quemLocou) {

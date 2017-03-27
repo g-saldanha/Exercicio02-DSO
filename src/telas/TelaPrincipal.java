@@ -21,11 +21,11 @@ public class TelaPrincipal  {
 		int opcao = teclado.nextInt();
 		switch (opcao) {
 		case 1:
-			TelaAmigos telaAmigos = new TelaAmigos();
+			TelaAmigos telaAmigos = new TelaAmigos(null);
 			telaAmigos.exibeTelaAmigos();
 			break;
 		case 2:
-			TelaLivros telaLivros = new TelaLivros();
+			TelaLivros telaLivros = new TelaLivros(null);
 			telaLivros.exibeTelaLivros();
 			break;
 		case 3:
@@ -33,7 +33,7 @@ public class TelaPrincipal  {
 			telaEmprestimos.exibeTelaEmprestimos();
 			break;
 		case 9:
-
+			sair();
 			break;
 		default:
 			break;
@@ -42,8 +42,8 @@ public class TelaPrincipal  {
 
 
 
-	public void sair() {
-
+	public static void sair() {
+		System.out.println("Você saiu do sistema!");
 	}
 
 	public void retornar() {
